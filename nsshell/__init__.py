@@ -690,7 +690,7 @@ def main():
     hostname = args['hostname']
     ip = args['ip']
 
-    if len(ip) > 12:
+    if len(ip) > 15:
         sys.stderr.write("Must be ipv4:"+args['ip'])
         sys.exit(1)
 
